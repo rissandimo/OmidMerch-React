@@ -1,0 +1,19 @@
+.header{
+    align-items: center;
+    background-color: lightgray;
+    justify-content: space-between;
+    height: 60px;
+    display: flex;
+}
+
+.header__cart{
+    cursor: pointer;
+    margin-right: 2rem;
+}
+.header__links{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    padding: 10px 20px;
+    width: 300px;
+}
