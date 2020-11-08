@@ -1,0 +1,12 @@
+.homePageSection__pic{
+    height: 200px;
+}
+
+.homePageSection__pic > img{
+    height: 100%;
+}
+
+.homePageSection__title{
+    margin-top: 5px;
+    text-align: center;
+}

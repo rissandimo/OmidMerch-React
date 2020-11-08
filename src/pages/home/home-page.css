@@ -1,0 +1,19 @@
+.homePage{
+    display: flex;
+    justify-content: space-around;
+    margin: 80px auto 0 auto;
+    width: 600px;
+}
+
+.homePageSection__pic{
+    height: 200px;
+}
+
+.homePageSection__pic > img{
+    height: 100%;
+}
+
+.homePageSection__title{
+    margin-top: 5px;
+    text-align: center;
+}
