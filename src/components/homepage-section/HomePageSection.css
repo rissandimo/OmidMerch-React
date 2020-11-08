@@ -1,9 +1,11 @@
 .homePageSection__pic{
-    height: 200px;
+    height: 300px;
+    width: 300px;
 }
 
 .homePageSection__pic > img{
     height: 100%;
+    width: 100%;
 }
 
 .homePageSection__title{
