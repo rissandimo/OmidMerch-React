@@ -28,6 +28,7 @@ class HomePage extends React.Component{
 
     render(){
         return(
+            
             <div className="homePage">
                 {
                     this.state.sections.map(({ id, ...otherProps}) => (

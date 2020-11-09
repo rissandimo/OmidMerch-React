@@ -2,7 +2,6 @@ import React from 'react';
 import './HomePageSection.css';
 
 const HomePageSection = ({ title, imageUrl }) => {
-    console.log(imageUrl);
     return(
         <div className="homePageSection">
             <div className="homePageSection__pic">

@@ -16,6 +16,7 @@ const firebaseConfig = {
 
     if(!userAuth) return;
 
+<<<<<<< HEAD
     // get user doc ref
     const userDocRef = firestore.doc(`users/${userAuth.uid}`);
 
@@ -23,6 +24,12 @@ const firebaseConfig = {
     const userSnapshotRef = await userDocRef.get();
 
     // execute if user doesn't exists in firestore db
+=======
+    const userDocRef = firestore.doc(`users/${userAuth.uid}`);
+
+    const userSnapshotRef = await userDocRef.get();
+
+>>>>>>> registration
     if(!userSnapshotRef.exists){
       const { email } = userAuth;
       const dateCreated = new Date();
@@ -39,7 +46,10 @@ const firebaseConfig = {
       }
     }
 
+<<<<<<< HEAD
     // return existing user or new user in db
+=======
+>>>>>>> registration
     return userDocRef;
 
   }

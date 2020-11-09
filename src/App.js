@@ -1,10 +1,15 @@
+import React from 'react';
 import './App.css';
 
 import Header from './components/header/Header';
 import HomePage from './pages/home/HomePage';
 import Login from './components/login/Login'
 import Register from './components/register/Register';
+import Shop from './pages/shop/Shop';
 
+import { auth, createUserProfileDocument } from './firebase/firebase';
+
+// Routing
 import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
