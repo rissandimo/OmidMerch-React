@@ -13,7 +13,6 @@ class Register extends React.Component{
         super();
 
         this.state = {
-            displayName: '',
             email: '',
             password: '',
             confirmPassword: ''
@@ -27,7 +26,7 @@ class Register extends React.Component{
     handleSubmit = event => {
         event.preventDefault();
 
-        const { displayName, email, password, confirmPassword } = this.state;
+        const { email, password, confirmPassword } = this.state;
         
         // confirm passwords match
         if(password !== confirmPassword){
@@ -43,7 +42,6 @@ class Register extends React.Component{
 
         // clear form
         this.setState({
-            displayName: '',
             email: '',
             password: '',
             confirmPassword: ''  
@@ -51,13 +49,10 @@ class Register extends React.Component{
     }
     render(){
         
-        const { displayName, email, password, confirmPassword} = this.state;
+        const { email, password, confirmPassword} = this.state;
         return(
             <div className="register">
                 <form onSubmit={this.handleSubmit} className='register__form'>
-                    <FormControl>
-                        <TextField value={displayName} label='Full Name' name='displayName' onChange={this.handleChange} />
-                    </FormControl>
                     <FormControl>
                         <TextField value={email} label='Email ' name='email' onChange={this.handleChange} />
                     </FormControl>

@@ -24,11 +24,31 @@ class App extends React.Component {
 
   logoutUser = null;
 
+  // When user logs in/out - save state in app
   componentDidMount(){
    this.logoutUser = auth.onAuthStateChanged(async userAuth => {
-       this.setState({currentUser: userAuth});
 
-      createUserProfileDocument(userAuth);
+    // if user is logged in
+    if(userAuth){
+
+      // get user doc ref
+      const userDocRef = await createUserProfileDocument(userAuth);
+
+      // get user info from db
+      userDocRef.onSnapshot(snapshot => {
+        // set user info in app state
+        this.setState({
+          user: {
+            id: snapshot.id,
+            ...snapshot.data()
+          }
+        }, () => {
+          console.log(this.state);
+        })
+      });
+    }else{
+      this.setState({currentUser: userAuth});
+    }
     });
   }
 
