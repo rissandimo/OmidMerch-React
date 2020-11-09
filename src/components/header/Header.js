@@ -15,15 +15,16 @@ const Header = ({ currentUser }) => (
     <div className="header">
 
     <div className="header__links">
-        <Link to='/shop'>Shop</Link>
-
-        {
-            currentUser ? '' : <Link to='/login'>Login</Link>
-        }
-        
+        <Link to='/shop'>Shop</Link>        
     </div>
 
     <div className="header__right">
+
+    {
+        currentUser ? <div className='link' onClick={() => auth.signOut()}>Sign Out</div> : 
+        <Link to='/login'>Login</Link>
+    }
+
     <div className="header__cart">
         <ShoppingCartIcon fontSize='large'/>
     </div>
