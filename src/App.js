@@ -7,7 +7,7 @@ import Login from './components/login/Login'
 import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
 
-import { auth } from './firebase/firebase';
+import { auth, createUserProfileDocument } from './firebase/firebase';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
@@ -25,10 +25,10 @@ class App extends React.Component {
   logoutUser = null;
 
   componentDidMount(){
-   this.logoutUser = auth.onAuthStateChanged(googleUser => {
-      this.setState({currentUser: googleUser});
+   this.logoutUser = auth.onAuthStateChanged(async userAuth => {
+       this.setState({currentUser: userAuth});
 
-      console.log(googleUser);
+      createUserProfileDocument(userAuth);
     });
   }
 
