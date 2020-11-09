@@ -7,6 +7,8 @@ import { auth } from '../../firebase/firebase';
 // Material UI
 import { Button, FormControl, TextField } from '@material-ui/core';
 
+import { Link } from 'react-router-dom';
+
 class Login extends React.Component{
 
     constructor(){
@@ -53,6 +55,11 @@ class Login extends React.Component{
                     </FormControl>
                     <Button color='primary' type='submit'>Login</Button>
                 </form>
+
+                <div className="login__createAccount">
+                    <p>Don't have an account? </p>
+                    <Link to='/register' className='register__link'>Create an account</Link>
+                </div>
             </div>
         )
     }

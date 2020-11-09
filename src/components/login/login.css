@@ -4,3 +4,14 @@
     margin: 80px auto 0 auto;
     width: 600px;
 }
+
+.login__createAccount{
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+    width: 400px;
+}
+
+.login__createAccount > .register__link{
+    color: blue;
+}
