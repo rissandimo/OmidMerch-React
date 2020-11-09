@@ -1,0 +1,12 @@
+.previewItem{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 390px;
+}
+
+.previewItem_description{
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 5px;
+}
