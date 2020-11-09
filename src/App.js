@@ -38,7 +38,7 @@ class App extends React.Component {
       userDocRef.onSnapshot(snapshot => {
         // set user info in app state
         this.setState({
-          user: {
+          currentUser: {
             id: snapshot.id,
             ...snapshot.data()
           }
@@ -48,6 +48,7 @@ class App extends React.Component {
       });
     }else{
       this.setState({currentUser: userAuth});
+      console.log("User logged out");
     }
     });
   }
