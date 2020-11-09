@@ -1,4 +1,5 @@
 import React from 'react';
+import './productPreview.css';
 
 const ProductPreview = ({title, items}) => {
     return (
