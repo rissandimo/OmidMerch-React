@@ -2,6 +2,10 @@
     margin-top: 50px;
 }
 
+.productPreview > .productPreview__title{
+    margin-left: 40px;
+}
+
 .preview{
     display: flex;
     justify-content: space-around;

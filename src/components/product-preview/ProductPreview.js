@@ -1,11 +1,11 @@
 import React from 'react';
-import PreviewItem from '../preview-item/Product';
+import PreviewItem from '../preview-item/PreviewItem';
 import './productPreview.css';
 
 const ProductPreview = ({title, items}) => {
     return (
         <div className="productPreview">
-            <h4>{title}</h4>
+            <h3 className='productPreview__title'>{title}</h3>
             <div className="preview">
                 {items.map(item => (
                     <PreviewItem key={item.id} item={item} alt="product"/>

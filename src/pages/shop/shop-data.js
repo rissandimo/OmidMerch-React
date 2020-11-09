@@ -26,7 +26,7 @@ const SHOP_DATA =
         {
           id: 4,
           name: 'Pearl Necklace',
-          imageUrl: 'https://i.ibb.co/TqvkYB1/4.jpg',
+          imageUrl: 'https://i.ibb.co/5hDbbLL/4.jpg',
           price: 15
         }
       ]
