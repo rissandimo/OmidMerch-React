@@ -1,33 +1,35 @@
 import React from 'react';
 import './App.css';
 
+// Components
 import Header from './components/header/Header';
 import HomePage from './pages/home/HomePage';
 import Login from './components/login/Login'
 import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
 
+// Firebase
 import { auth, createUserProfileDocument } from './firebase/firebase';
+
+// Redux
+import { connect } from 'react-redux'
+import { setCurrentUser } from './redux/user/user-actions';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
 
 class App extends React.Component {
 
-  constructor(){
-    super();
-
-    this.state = {
-      currentUser: null
-    };
-  }
-
   logoutUser = null;
 
-  // When user logs in/out - save state in app
+  
   componentDidMount(){
-   this.logoutUser = auth.onAuthStateChanged(async userAuth => {
-
+    
+    const { setCurrentUser } = this.props;
+    
+    // When user logs in/out - save state in app
+    this.logoutUser = auth.onAuthStateChanged(async userAuth => {
+      
     // if authentication user is logged in
     if(userAuth){
 
@@ -37,17 +39,15 @@ class App extends React.Component {
       // use document reference get user info from db
       userDocRef.onSnapshot(snapshot => {
         // set user info in app state
-        this.setState({
-          currentUser: {
+        setCurrentUser ({
             id: snapshot.id,
             ...snapshot.data()
-          }
+          })
         }, () => {
           console.log(this.state);
         })
-      });
     }else{
-      this.setState({currentUser: userAuth});
+      setCurrentUser(userAuth);
       console.log("User logged out");
     }
     });
@@ -61,7 +61,7 @@ class App extends React.Component {
       render(){
         return (
           <div className="app">
-            <Header currentUser={this.state.currentUser} />
+            <Header />
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route path='/shop' component={Shop} />
@@ -73,4 +73,8 @@ class App extends React.Component {
       }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => ({
+  setCurrentUser: user => dispatch(setCurrentUser(user))
+})
+
+export default connect(null, mapDispatchToProps)(App);
