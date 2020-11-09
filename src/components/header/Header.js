@@ -1,6 +1,9 @@
 import React from 'react';
 import './header.css';
 
+// Components
+import CartIcon from '../cart-icon/CartIcon';
+
 // Firebase
 import { auth } from '../../firebase/firebase';
 
@@ -38,7 +41,7 @@ const Header = ({ currentUser }) => (
     }
 
     <div className="header__cart">
-        <ShoppingCartIcon fontSize='large'/>
+        <CartIcon />
     </div>
 
     </div>
