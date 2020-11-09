@@ -8,7 +8,7 @@ const HomePageSection = ({ title, imageUrl }) => {
                 <img src={imageUrl} alt="product section"/>
             </div>
             <div className="homePageSection__title">
-                <h5>{title}</h5>
+                <h4>{title}</h4>
             </div>
         </div>
     )
