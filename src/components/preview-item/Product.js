@@ -7,7 +7,7 @@ const PreviewItem = ({ item }) => {
         <div className="previewItem">
             <p>{name}</p>
             <img src={imageUrl} alt=""/>
-            <h4>{price}</h4>
+            <h4>${price}</h4>
         </div>
     )
 }

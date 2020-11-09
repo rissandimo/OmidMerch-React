@@ -1,3 +1,7 @@
+.productPreview{
+    margin-top: 50px;
+}
+
 .preview{
     display: flex;
     justify-content: space-around;
