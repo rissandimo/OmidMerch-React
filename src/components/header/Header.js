@@ -8,18 +8,27 @@ import { auth } from '../../firebase/firebase';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 // Router
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 
 const Header = ({ currentUser }) => (
 
     <div className="header">
 
+    <div className="header__logo">
+        <Link to='/'></Link>
+        <img src='https://i.ibb.co/h7Fyd0L/logo-sm.png' alt="logo"/>
+    </div>
+
     <div className="header__links">
+        <Link to='/'>Home</Link>        
         <Link to='/shop'>Shop</Link>        
     </div>
 
+    {currentUser ? <Redirect to="/" /> : ''}
+
     <div className="header__right">
 
+    {/* User signed in - Show sign out link*/}
     {
         currentUser ? <div className='link' onClick={() => auth.signOut()}>Sign Out</div> : 
         <Link to='/login'>Login</Link>

@@ -1,3 +1,7 @@
+.homePageSection:hover{
+    opacity: 0.8;
+}
+
 .homePageSection__pic{
     height: 300px;
     width: 300px;
