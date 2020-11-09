@@ -1,6 +1,10 @@
 import React from 'react';
 import './login.css';
 
+// Firebase
+import { auth } from '../../firebase/firebase';
+
+// Material UI
 import { Button, FormControl, TextField } from '@material-ui/core';
 
 class Login extends React.Component{
@@ -23,13 +27,18 @@ class Login extends React.Component{
     handleSubmit = event => {
         event.preventDefault();
 
+        const { email, password } = this.state;
+
+        auth.signInWithEmailAndPassword(email, password)
+        .catch((error) => {
+            console.log('Unable to sign in user: ', error);
+        })
 
         this.setState({
             email: '',
             password: ''
         })
     }
-
 
     render(){
 
