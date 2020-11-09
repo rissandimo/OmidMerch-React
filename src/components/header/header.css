@@ -17,3 +17,10 @@
     padding: 10px 20px;
     width: 300px;
 }
+
+.header__right{
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+    width: 200px;
+}

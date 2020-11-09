@@ -23,30 +23,23 @@ class App extends React.Component {
 
   logoutUser = null;
 
-  // componentDidMount(){
-  //   this.logoutUser = auth.onAuthStateChanged(function(googleUser){
-  //     if(googleUser){
-  //       this.setState({currentUser: googleUser},
-  //         () => console.log(this.state.currentUser))
-  //     }
-  //   })
-  // }
-
   componentDidMount(){
-    auth.onAuthStateChanged(googleUser => {
+   this.logoutUser = auth.onAuthStateChanged(googleUser => {
       this.setState({currentUser: googleUser});
 
       console.log(googleUser);
     });
   }
 
-
+  componentWillUnmount(){
+    this.logoutUser();
+  }
 
 
       render(){
         return (
           <div className="app">
-            <Header />
+            <Header currentUser={this.state.currentUser} />
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route path='/login' component={Login} />
