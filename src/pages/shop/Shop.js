@@ -2,7 +2,7 @@ import React from 'react';
 
 import SHOP_DATA from './shop-data';
 
-import Product from '../../components/product/Product';
+import ProductPreview from '../../components/product-preview/ProductPreview';
 
 class Shop extends React.Component{
 
@@ -21,8 +21,8 @@ class Shop extends React.Component{
             <div className="shop">
 
                 {
-                    products.map((product, index) => {
-                      return <Product key={product.id} title={product.title} />
+                    products.map(({id, ...otherProductProps}) => {
+                      return <ProductPreview key={id} {...otherProductProps} />
                     })
                 }
 
