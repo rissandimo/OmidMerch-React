@@ -20,7 +20,6 @@ class Shop extends React.Component{
 
         return(
             <div className="shop">
-
                 {
                     products.map(({id, ...otherProductProps}) => {
                       return <ProductPreview key={id} {...otherProductProps} />

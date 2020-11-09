@@ -1,4 +1,5 @@
 import React from 'react';
+import PreviewItem from '../preview-item/Product';
 import './productPreview.css';
 
 const ProductPreview = ({title, items}) => {
@@ -7,7 +8,7 @@ const ProductPreview = ({title, items}) => {
             <h4>{title}</h4>
             <div className="preview">
                 {items.map(item => (
-                    <img src={item.imageUrl} alt="product"/>
+                    <PreviewItem key={item.id} item={item} alt="product"/>
                 ))}
             </div>
         </div>

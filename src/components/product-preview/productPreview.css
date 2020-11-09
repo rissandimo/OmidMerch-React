@@ -1,3 +1,4 @@
-.productPreview{
-    margin-left: 10px;
+.preview{
+    display: flex;
+    justify-content: space-around;
 }
