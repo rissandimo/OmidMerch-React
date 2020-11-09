@@ -1,6 +1,5 @@
 import React from 'react';
 
-<<<<<<< HEAD
 import SHOP_DATA from './shop-data'
 
 class Shop extends React.Component{
@@ -10,13 +9,6 @@ class Shop extends React.Component{
                 {SHOP_DATA.map(product => {
                     
                 })}
-=======
-class Shop extends React.Component{
-    render(){
-        return(
-            <div className="shop">
-                Shop page
->>>>>>> registration
             </div>
         )
     }

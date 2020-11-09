@@ -15,25 +15,25 @@ const SHOP_DATA = [
                 name: 'Burberry Glasses',
                 price: 175,
                 imageUrl: 'https://i.ibb.co/rf2PQQT/2.jpg' 
-            }
+            },
             {
                 id: 3,
                 name: 'Fergamo Shoes: Size 6 1/2',
                 price: 50.00,
                 imageUrl: 'https://i.ibb.co/rf2PQQT/2.jpg' 
-            }
+            },
             {
                 id: 4,
                 name: 'Pearl Necklace',
                 price: 15,
                 imageUrl: 'https://i.ibb.co/rf2PQQT/2.jpg' 
-            }
+            },
             {
                 id: 5,
                 name: 'White pearl necklace',
                 price: 15,
                 imageUrl: 'https://i.ibb.co/rf2PQQT/2.jpg' 
-            }
+            },
             {
                 id: 6,
                 name: 'Necklace',
