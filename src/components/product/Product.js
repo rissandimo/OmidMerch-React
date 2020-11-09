@@ -1,10 +1,10 @@
 import React from 'react';
 
-const Product = ({ name, price, imageUrl }) => {
-    console.log('product - name: ', name);
+const Product = ({ title, price, imageUrl }) => {
+    console.log('product - name: ', title);
     return (
     <div className="product">
-        <p>{name}</p>
+        <p>{title}</p>
     </div>
     )
 }

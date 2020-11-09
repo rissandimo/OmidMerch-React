@@ -22,7 +22,7 @@ class Shop extends React.Component{
 
                 {
                     products.map((product, index) => {
-                        return <p key={product.id}>{product.title}</p>
+                      return <Product key={product.id} title={product.title} />
                     })
                 }
 
