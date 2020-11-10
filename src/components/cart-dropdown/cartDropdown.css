@@ -5,13 +5,24 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 300px;
+    height: 340px;
     overflow: auto;
-    padding: 10px;
+    padding: 20px;
     position: absolute;
     right: 30px;
-    top: 70px;
-    width: 250px;
+    top: 80px;
+    z-index: 5;
+    width: 240px;
+}
+
+.cartDropdown > .cartDropdown__items{
+    display: flex;
+    flex-direction: column;
+    height: 240px;
+}
+
+.cartDropdown.hidden{
+    display: none;
 }
 
 .cartDropdown > .cartDropdown_text{
