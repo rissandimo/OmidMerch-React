@@ -1,0 +1,25 @@
+.cartDropdown{
+    align-items: center;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
+    overflow: auto;
+    padding: 10px;
+    position: absolute;
+    right: 30px;
+    top: 70px;
+    width: 250px;
+}
+
+.cartDropdown > .cartDropdown_text{
+    border-bottom: 1px solid lightgray;
+    margin-bottom: 10px;
+}
+
+.cartDropdown > .cartDropdown__checkout-button{
+    background-color: green;
+    margin-top: auto;
+}

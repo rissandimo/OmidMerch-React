@@ -3,12 +3,11 @@ import './header.css';
 
 // Components
 import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
 
 // Firebase
 import { auth } from '../../firebase/firebase';
 
-// Material UI
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 // Redux
 import { connect } from 'react-redux';
@@ -45,6 +44,8 @@ const Header = ({ currentUser }) => (
     </div>
 
     </div>
+
+    <CartDropdown />
 
     </div>
 )
