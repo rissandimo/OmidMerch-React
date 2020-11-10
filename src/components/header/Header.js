@@ -15,7 +15,7 @@ import { connect } from 'react-redux';
 // Router
 import { Link, Redirect } from 'react-router-dom';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, cartHidden }) => (
 
     <div className="header">
 
@@ -45,13 +45,14 @@ const Header = ({ currentUser }) => (
 
     </div>
 
-    <CartDropdown />
+    {cartHidden ? '' :  <CartDropdown />}
 
     </div>
 )
 
- const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+ const mapStateToProps = ({user: {currentUser}, cart: {cartHidden}}) => ({
+    currentUser,
+    cartHidden
  });
 
 export default connect(mapStateToProps)(Header);
