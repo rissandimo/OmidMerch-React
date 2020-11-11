@@ -5,20 +5,22 @@
     border-radius: 10px;
     display: flex;
     flex-direction: column;
-    height: 340px;
-    overflow: auto;
+    height: 450px;
     padding: 20px;
     position: absolute;
-    right: 30px;
-    top: 80px;
+    right: 40px;
+    top: 90px;
     z-index: 5;
-    width: 240px;
+    width: 300px;
 }
 
 .cartDropdown > .cartDropdown__items{
     display: flex;
     flex-direction: column;
-    height: 240px;
+    margin: 10px 0;
+    height: 300px;
+    overflow: auto;
+
 }
 
 .cartDropdown.hidden{
@@ -30,6 +32,6 @@
     margin-bottom: 10px;
 }
 
-.cartDropdown > .cartDropdown__checkout-button{
+.cartDropdown > button{
     margin-top: auto;
 }
