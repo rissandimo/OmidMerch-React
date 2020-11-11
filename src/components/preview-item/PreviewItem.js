@@ -3,7 +3,10 @@ import './previewItem.css';
 
 import CustomButton from '../button/CustomButton';
 
-const PreviewItem = ({ item }) => {
+import { addCartItem } from '../../redux/cart/cart-actions';
+import { connect } from 'react-redux';
+
+const PreviewItem = ({ item, addCartItem }) => {
 
     const { name, imageUrl, price } = item;
     return (
@@ -13,9 +16,13 @@ const PreviewItem = ({ item }) => {
             <h4>${price}</h4>
         </div>
             <img src={imageUrl} alt=""/>
-            <CustomButton text='Add to cart' />
+            <button onClick={() => addCartItem(item)}>Add to cart</button>
         </div>
     )
 }
 
-export default PreviewItem;
+const mapDispatchToProps = dispatch => ({
+    addCartItem: item => dispatch(addCartItem(item))
+})
+
+export default connect(null, mapDispatchToProps)(PreviewItem);
