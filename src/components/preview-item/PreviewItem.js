@@ -16,7 +16,7 @@ const PreviewItem = ({ item, addCartItem }) => {
             <h4>${price}</h4>
         </div>
             <img src={imageUrl} alt=""/>
-            <CustomButton>Add to cart</CustomButton>
+            <button onClick={() => addCartItem(item)}>Add to cart</button>
         </div>
     )
 }
