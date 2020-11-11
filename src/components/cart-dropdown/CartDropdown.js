@@ -10,7 +10,7 @@ const CartDropdown = () => (
     <div className="cartDropdown__items">
 
     </div>
-    <CustomButton text='Checkout' className='cartDropdown__checkout-button'/>
+    <CustomButton >Checkout</CustomButton>
     </div>
 );
 

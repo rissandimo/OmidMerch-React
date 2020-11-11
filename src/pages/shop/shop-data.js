@@ -37,7 +37,7 @@ const SHOP_DATA =
       routeName: 'localPickup',
       items: [
         {
-          id: 10,
+          id: 1,
           name: 'Rug',
           imageUrl: 'https://i.ibb.co/N6ZTd2v/36.jpg',
           price: 125
