@@ -1,10 +1,10 @@
 import React from 'react';
 import './previewItem.css';
 
-import CustomButton from '../button/CustomButton';
-
 import { addCartItem } from '../../redux/cart/cart-actions';
 import { connect } from 'react-redux';
+
+import CustomButton from '../button/CustomButton';
 
 const PreviewItem = ({ item, addCartItem }) => {
 
@@ -16,7 +16,9 @@ const PreviewItem = ({ item, addCartItem }) => {
             <h4>${price}</h4>
         </div>
             <img src={imageUrl} alt=""/>
-            <button onClick={() => addCartItem(item)}>Add to cart</button>
+            <CustomButton onClick={() => addCartItem(item)} >
+        Add to cart
+      </CustomButton>
         </div>
     )
 }
