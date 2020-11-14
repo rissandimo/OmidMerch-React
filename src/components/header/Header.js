@@ -1,11 +1,13 @@
 import React from 'react';
 import './header.css';
 
+// Components
+import CartIcon from '../cart-icon/CartIcon';
+import CartDropdown from '../cart-dropdown/CartDropdown';
+
 // Firebase
 import { auth } from '../../firebase/firebase';
 
-// Material UI
-import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 
 // Redux
 import { connect } from 'react-redux';
@@ -13,7 +15,7 @@ import { connect } from 'react-redux';
 // Router
 import { Link, Redirect } from 'react-router-dom';
 
-const Header = ({ currentUser }) => (
+const Header = ({ currentUser, cartHidden }) => (
 
     <div className="header">
 
@@ -38,16 +40,19 @@ const Header = ({ currentUser }) => (
     }
 
     <div className="header__cart">
-        <ShoppingCartIcon fontSize='large'/>
+        <CartIcon />
     </div>
 
     </div>
+
+    {cartHidden ? '' :  <CartDropdown />}
 
     </div>
 )
 
- const mapStateToProps = state => ({
-    currentUser: state.user.currentUser
+ const mapStateToProps = ({user: {currentUser}, cart: {cartHidden}}) => ({
+    currentUser,
+    cartHidden
  });
 
 export default connect(mapStateToProps)(Header);

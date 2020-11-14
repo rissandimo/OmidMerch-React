@@ -1,0 +1,10 @@
+.custom-button{
+    padding: 7px 12px;
+    text-transform: uppercase;
+    margin: 0 auto;
+    width: 50%;
+}
+
+.cartDropdown__checkout-button{
+    outline: 0;
+}

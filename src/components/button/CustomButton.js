@@ -1,12 +1,11 @@
 import React from 'react';
-import './customButton.css';
+import './CustomButton.css';
 
-import { Button } from '@material-ui/core';
-
-const CustomButton = ({ text }) => (
-    <Button variant="outlined" color="primary">
-        {text}
-    </Button>   
-)
-
+const CustomButton = ({ children, ...otherProps }) => 
+(
+    <button className={`custom-button`} {...otherProps} >
+      {children}
+    </button>
+  );
+  
 export default CustomButton;
