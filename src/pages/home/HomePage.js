@@ -20,7 +20,7 @@ class HomePage extends React.Component{
                 title: 'Local Pickup',
                 imageUrl: 'https://i.ibb.co/ZByc3Cx/36.jpg',
                 id: 2,
-                linkUrl: 'local pickup'
+                linkUrl: 'localPpickup'
                 }
             ]
         }
