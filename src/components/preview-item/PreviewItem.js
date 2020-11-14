@@ -11,14 +11,12 @@ const PreviewItem = ({ item, addCartItem }) => {
     const { name, imageUrl, price } = item;
     return (
         <div className="previewItem">
+            <img src={imageUrl} alt=""/>
         <div className="previewItem_description">
             <p>{name}</p>
             <h4>${price}</h4>
         </div>
-            <img src={imageUrl} alt=""/>
-            <CustomButton onClick={() => addCartItem(item)} >
-        Add to cart
-      </CustomButton>
+            <CustomButton onClick={() => addCartItem(item)} > Add to cart </CustomButton>
         </div>
     )
 }
