@@ -5,7 +5,7 @@ import './productPreview.css';
 const ProductPreview = ({title, items}) => {
     return (
         <div className="productPreview">
-            <h3 className='productPreview__title'>{title}</h3>
+            <h2 className='productPreview__title'>{title}</h2>
             <div className="preview">
                 {items.map(item => (
                     <PreviewItem key={item.id} item={item} alt="product"/>

@@ -6,13 +6,13 @@ const SHOP_DATA =
       routeName: 'womens',
       items: [
         {
-          id: 2,
+          id: 1,
           name: 'Burberry Glasses',
           imageUrl: 'https://i.ibb.co/rf2PQQT/2.jpg',
           price: 175
         },
         {
-          id: 3,
+          id: 2,
           name: 'Fergamo Shoes: Size 6 1/2',
           imageUrl: 'https://i.ibb.co/GnW3m4z/3.jpg',
           price: 50.00
@@ -25,7 +25,7 @@ const SHOP_DATA =
       routeName: 'localPickup',
       items: [
         {
-          id: 1,
+          id: 3,
           name: 'Rug',
           imageUrl: 'https://i.ibb.co/N6ZTd2v/36.jpg',
           price: 125
@@ -38,7 +38,7 @@ const SHOP_DATA =
       routeName: 'housewares',
       items: [
         {
-          id: 1,
+          id: 4,
           name: 'China Plates',
           imageUrl: 'https://i.ibb.co/3f6XZR0/1.jpg',
           price: 100
@@ -51,35 +51,35 @@ const SHOP_DATA =
       routeName: 'jewelry',
       items: [
         {
-          id: 1,
+          id: 5,
           title: 'Necklace',
           imageUrl: 'https://i.ibb.co/gJBGkHS/5.jpg',
           price: 15
         },
         {
-          id: 2,
+          id: 6,
           title: 'Necklace',
           imageUrl: 'https://i.ibb.co/M2KmCXQ/6.jpg',
           price: 15
         },
         {
-          id: 3,
+          id: 7,
           title: 'Necklace',
           imageUrl: 'https://i.ibb.co/s1wbwrm/7.jpg',
           price: 15
         },
         {
-          id: 4,
+          id: 8,
           title: 'Necklace',
           imageUrl: 'https://i.ibb.co/XCxCd63/8.jpg',
           price: 15
         },
         {
-          id: 5,
+          id: 9,
           title: 'Necklace',
           imageUrl: 'https://i.ibb.co/Kx2P69Q/9.jpg',
           price: 15
-        },
+        }
       ]
     }
 ];
