@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 
 // Components
+import CheckoutPage from './pages/checkout/Checkout';
 import Header from './components/header/Header';
 import HomePage from './pages/home/HomePage';
 import Login from './components/login/Login'
@@ -18,6 +19,7 @@ import { setCurrentUser } from './redux/user/user-actions';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
+
 
 class App extends React.Component {
 
@@ -69,6 +71,7 @@ class App extends React.Component {
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <Route path='/womens' component={Womens} />
+              <Route path='/checkout' component={CheckoutPage} />
             </Switch>
           </div>
         );
