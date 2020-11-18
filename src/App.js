@@ -7,6 +7,7 @@ import HomePage from './pages/home/HomePage';
 import Login from './components/login/Login'
 import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
+import Womens from './pages/womens/Womens';
 
 // Firebase
 import { auth, createUserProfileDocument } from './firebase/firebase';
@@ -67,6 +68,7 @@ class App extends React.Component {
               <Route path='/shop' component={Shop} />
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
+              <Route path='/womens' component={Womens} />
             </Switch>
           </div>
         );

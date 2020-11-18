@@ -4,12 +4,14 @@
 }
 
 .productPreview > .productPreview__title{
-    margin-left: 40px;
+    font-weight: 500;
+    margin-bottom: 35px;
+    text-align: center;
 }
 
 .preview{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 4rem;
     margin-top: 20px;
 }

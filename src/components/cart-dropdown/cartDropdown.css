@@ -7,9 +7,9 @@
     flex-direction: column;
     height: 450px;
     padding: 20px;
-    position: absolute;
-    right: 40px;
-    top: 90px;
+    position: fixed;
+    right: 0px;
+    top: 60px;
     z-index: 5;
     width: 300px;
 }
