@@ -2,9 +2,6 @@ import React from 'react';
 import './Womens.css';
 
 class Womens extends React.Component{
-    constructor(){
-        super();
-    }
 
     render(){
         return(

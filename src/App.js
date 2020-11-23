@@ -5,6 +5,7 @@ import './App.css';
 import CheckoutPage from './pages/checkout/Checkout';
 import Header from './components/header/Header';
 import HomePage from './pages/home/HomePage';
+import LocalPickup from './pages/localPickup/LocalPickup';
 import Login from './components/login/Login'
 import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
@@ -68,6 +69,7 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route path='/shop' component={Shop} />
+              <Route path='/localPickup' component={LocalPickup} />
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <Route path='/womens' component={Womens} />

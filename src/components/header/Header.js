@@ -20,8 +20,9 @@ const Header = ({ currentUser, cartHidden }) => (
     <div className="header">
 
     <div className="header__logo">
-        <Link to='/'></Link>
-        <img src='https://i.ibb.co/h7Fyd0L/logo-sm.png' alt="logo"/>
+        <Link className='header__link' to='/'>
+            <img src='https://i.ibb.co/h7Fyd0L/logo-sm.png' alt="logo"/>
+        </Link>
     </div>
 
     <div className="header__links">
