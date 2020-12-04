@@ -2,8 +2,10 @@ import React from 'react';
 import './App.css';
 
 // Components
+import CheckoutPage from './pages/checkout/Checkout';
 import Header from './components/header/Header';
 import HomePage from './pages/home/HomePage';
+import LocalPickup from './pages/localPickup/LocalPickup';
 import Login from './components/login/Login'
 import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
@@ -18,6 +20,7 @@ import { setCurrentUser } from './redux/user/user-actions';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
+
 
 class App extends React.Component {
 
@@ -66,9 +69,11 @@ class App extends React.Component {
             <Switch>
               <Route exact path='/' component={HomePage} />
               <Route path='/shop' component={Shop} />
+              <Route path='/localPickup' component={LocalPickup} />
               <Route path='/login' component={Login} />
               <Route path='/register' component={Register} />
               <Route path='/womens' component={Womens} />
+              <Route path='/checkout' component={CheckoutPage} />
             </Switch>
           </div>
         );

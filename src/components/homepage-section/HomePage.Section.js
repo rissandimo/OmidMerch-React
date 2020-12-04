@@ -3,11 +3,11 @@ import './HomePageSection.css';
 
 import { Link } from 'react-router-dom';
 
-const HomePageSection = ({ title, imageUrl }) => {
+const HomePageSection = ({ title, imageUrl, linkUrl }) => {
     return(
         <div className="homePageSection">
             <div className="homePageSection__pic">
-                <Link to='/womens' className='homePageSection__link'>
+                <Link to={linkUrl} className='homePageSection__link'>
                     <img src={imageUrl} alt="product section"/>
                 </Link>
             </div>
