@@ -9,7 +9,7 @@ const CheckoutItem = ({ item: { name, imageUrl, price} }) => (
         </div>
 
         <span className="name">{name}</span>
-        <span className="price">{price}</span>
+        <span className="price">${price}</span>
         <span className="remove__button">&#10005;</span>
     </div>
 )

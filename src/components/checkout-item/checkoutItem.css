@@ -10,6 +10,7 @@
 }
 
 .checkout__item > .image__container {
+      height: 23%;
       width: 23%;
       padding-right: 15px;
 
@@ -20,19 +21,19 @@
     height: 100%;
 }
 
+.checkout__item >  
+    .name,
+    /* .quantity, */
+    .price {
+        width: 33%;
+}
+
 .checkout__item > .quantity {
     padding-left: 20px;
 }
 
 .checkout__item > .remove__button {
-    padding-right: 20px;
+    padding-right: 2rem;
     cursor: pointer;
 }
-
-.image__container > 
-    .name,
-    .quantity,
-    .price {
-        width: 23%;
-    }
   
