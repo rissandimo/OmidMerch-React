@@ -1,9 +1,16 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
-const CheckoutPage = () => (
+const CheckoutPage = ({ cartItems }) => (
     <div className="checkoutPage">
-        checkout page
+        {cartItems.map(item => (
+            <p>{item.name}</p>
+        ))}
     </div>
-)
+);
 
-export default CheckoutPage;
+const mapStateToProps = state => ({
+    cartItems: state.cart.cartItems
+});
+
+export default connect(mapStateToProps)(CheckoutPage);
