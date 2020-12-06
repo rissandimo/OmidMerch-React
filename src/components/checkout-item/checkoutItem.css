@@ -32,8 +32,16 @@
     padding-left: 20px;
 }
 
-.checkout__item > .remove__button {
-    padding-right: 2rem;
+.remove__button{
+    background-color: lightgray;
     cursor: pointer;
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    padding: 0.4rem;
 }
+
+.remove__button:active{
+    transform: scale(0.95);
+}   
   
