@@ -1,0 +1,31 @@
+.checkout__page{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    margin: 50px auto 0;
+    min-height: 90vh;
+    width: 55%;
+}
+
+.checkout__header{
+    border-bottom: 1px solid darkgray;
+    display: flex;
+    justify-content: space-between;
+    height: 40px;
+    width: 100%;
+}
+
+.checkout__header > .header__block{
+    text-transform: capitalize;
+    width: 23%;
+}
+
+.header__block:last-child{
+    width: 8%;
+}
+
+.total{
+    position: absolute;
+    right: 10px;
+}
+
