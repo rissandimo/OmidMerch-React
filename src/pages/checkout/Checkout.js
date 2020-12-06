@@ -4,8 +4,9 @@ import './checkout.css';
 import CheckoutItem from '../../components/checkout-item/Checkout-Item';
 
 import { connect } from 'react-redux';
+import { getCartTotal } from '../../redux/cart/cart-selector';
 
-const CheckoutPage = ({ cartItems }) => (
+const CheckoutPage = ({ cartItems, cartTotal }) => (
     <div className="checkout__page">
 
         
@@ -25,14 +26,15 @@ const CheckoutPage = ({ cartItems }) => (
         </div>
 
         {cartItems.map(item => (<CheckoutItem key={item.id} item={item} />))}
-        
-        <div className="total">Total: $</div>
+
+<div className="total">Total: ${cartTotal}</div>
     </div>
 
 );
 
 const mapStateToProps = state => ({
-    cartItems: state.cart.cartItems
+    cartItems: state.cart.cartItems,
+    cartTotal: getCartTotal(state)
 });
 
 
