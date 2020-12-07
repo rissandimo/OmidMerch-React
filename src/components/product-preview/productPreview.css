@@ -15,3 +15,26 @@
     grid-gap: 4rem;
     margin-top: 20px;
 }
+
+@media (max-width: 1805px){
+    .preview{
+    grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media (max-width: 1345px){
+    .preview{
+    grid-template-columns: repeat(2, 1fr);
+
+    }
+}
+
+@media (max-width: 880px){
+    .preview{
+        align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    }
+}
