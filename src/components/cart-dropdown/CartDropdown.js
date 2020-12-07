@@ -9,6 +9,7 @@ import CartItem from '../cart-item/CartItem';
 import { connect } from 'react-redux';
 import { toggleCartHidden } from '../../redux/cart/cart-actions';
 
+// Router
 import { withRouter } from 'react-router-dom';
 
 const CartDropdown = ({ cartItems, dispatch, history }) => (
