@@ -1,44 +1,30 @@
 import React from 'react';
 import './home-page.css';
 
+// Components
 import HomePageSection from '../../components/homepage-section/HomePage.Section';
 
-class HomePage extends React.Component{
+// Redux
+import { connect } from 'react-redux';
+import { getProductCategorySection } from '../../redux/product-category/product-category-selectors';
 
-    constructor(){
-        super();
+import { createStructuredSelector } from 'reselect';
 
-        this.state = {
-            sections: [
-                {
-                title: 'Womens',
-                imageUrl: 'https://i.ibb.co/sJG8hWX/13.jpg',
-                id: 1,
-                linkUrl: 'womens'
-                },
-                {
-                title: 'Local Pickup',
-                imageUrl: 'https://i.ibb.co/ZByc3Cx/36.jpg',
-                id: 2,
-                linkUrl: 'localPickup'
-                }
-            ]
+const HomePage = ({ sections }) => {
+
+    return(
+        <div className="homePage">
+        {
+        sections.map(({ id, ...otherProps}) => (
+            <HomePageSection key={id} {...otherProps} />
+        ))
         }
-    }
-
-    render(){
-        return(
-            
-            <div className="homePage">
-                {
-                    this.state.sections.map(({ id, ...otherProps}) => (
-                        <HomePageSection key={id} {...otherProps} />
-                    ))
-                }
-
-            </div>
-        )
-    }
+        </div>
+    )
 }
 
-export default HomePage;
+const mapStateToProps = createStructuredSelector({
+    sections: getProductCategorySection
+})
+
+export default connect(mapStateToProps)(HomePage);
