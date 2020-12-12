@@ -1,9 +1,14 @@
 .homePage{
-    display: flex;
-    justify-content: space-around;
     margin: 80px auto 0 auto;
-    width: 700px;
+    width: 80%;
 }
+
+.homePage > .homePage__items{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+}
+
+/* 
 
 .homePageSection__pic{
     height: 200px;
@@ -16,4 +21,4 @@
 .homePageSection__title{
     margin-top: 5px;
     text-align: center;
-}
+} */

@@ -1,8 +1,19 @@
 .previewItem{
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
+    height: 340px;
     width: 350px;
+}
+
+.previewItem > img{
+    background-position: center;
+    background-size: cover;
+    margin-bottom: 5px;
+    height: 95%;
+    width: 100%;
 }
 
 .previewItem > .previewItem__name{

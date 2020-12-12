@@ -14,11 +14,11 @@ const HomePage = ({ sections }) => {
 
     return(
         <div className="homePage">
-        {
-        sections.map(({ id, ...otherProps}) => (
-            <HomePageSection key={id} {...otherProps} />
-        ))
-        }
+            <div className="homePage__items">
+                {
+                sections.map(({ id, ...otherProps}) => ( <HomePageSection key={id} {...otherProps} /> ))
+                }
+            </div>
         </div>
     )
 }
