@@ -8,10 +8,18 @@ import { getCategoryItems } from '../../redux/shop/shop-selector';
 import PreviewItem from '../../components/preview-item/PreviewItem';
 
 const CategoryPage = ({ category }) => {
+
+    const { title, items } = category;
+
     console.log(category);
     return(
-        <div className="categoryPage">
-            <h2>Category Page</h2>
+        <div className="category__page">
+            <h2 className="title">{ title }</h2>
+            <div className="items">
+                {items.map(item => (
+                    <PreviewItem key={item.id} item={item} />
+                ))}
+            </div>
         </div>
     )
 }
