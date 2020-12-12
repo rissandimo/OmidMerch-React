@@ -27,7 +27,7 @@ const Header = ({ currentUser, cartHidden }) => (
 
     <div className="header__links">
         <Link to='/'>Home</Link>        
-        <Link to='/shop'>Shop</Link>        
+        <Link to='/shop'>All Products</Link>        
     </div>
 
     {currentUser ? <Redirect to="/" /> : ''}

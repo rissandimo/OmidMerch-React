@@ -4,13 +4,25 @@ const INITIAL_STATE = {
         title: 'Womens',
         imageUrl: 'https://i.ibb.co/sJG8hWX/13.jpg',
         id: 1,
-        linkUrl: 'womens'
+        linkUrl: '/shop/womens'
         },
         {
         title: 'Local Pickup',
         imageUrl: 'https://i.ibb.co/ZByc3Cx/36.jpg',
         id: 2,
-        linkUrl: 'localPickup'
+        linkUrl: '/shop/localPickup'
+        },
+        {
+        title: 'Housewares',
+        imageUrl: 'https://i.ibb.co/3f6XZR0/1.jpg',
+        id: 3,
+        linkUrl: '/shop/housewares'
+        },
+        {
+        title: 'Jewelry',
+        imageUrl: 'https://i.ibb.co/M2KmCXQ/6.jpg',
+        id: 4,
+        linkUrl: '/shop/jewelry'
         }
     ]
 };
