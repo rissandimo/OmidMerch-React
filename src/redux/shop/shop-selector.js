@@ -7,6 +7,14 @@ export const getCollectionItems = createSelector(
     shop => shop.collections
 )
 
+// Get array of category items
+// Get arrays of all they keys - womens/localPickup, etc..
+// For each key, get the items that pertain to that key
+export const getCategoryItemsForPreview = createSelector(
+  [getCollectionItems],
+  categories => Object.keys(categories).map(key => categories[key])
+)
+
 export const getCategoryItems = categoryUrlParam =>
   createSelector(
     [getCollectionItems],
