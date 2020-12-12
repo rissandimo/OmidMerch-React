@@ -3,12 +3,12 @@ import './categoryPage.css';
 
 import { connect } from 'react-redux';
 
-import { selectCollection } from '../../redux/shop/shop-selector';
+import { getCategoryItems } from '../../redux/shop/shop-selector';
 
 import PreviewItem from '../../components/preview-item/PreviewItem';
 
-const CategoryPage = ({ collection }) => {
-    console.log(collection);
+const CategoryPage = ({ category }) => {
+    console.log(category);
     return(
         <div className="categoryPage">
             <h2>Category Page</h2>
@@ -17,7 +17,7 @@ const CategoryPage = ({ collection }) => {
 }
 
 const mapStateToProps = (state, ownProps) => ({
-    collection: selectCollection(ownProps.match.params.collectionId)(state)
+    category: getCategoryItems(ownProps.match.params.categoryId)(state)
   });
 
 export default connect(mapStateToProps)(CategoryPage);

@@ -2,7 +2,7 @@ import { createSelector } from 'reselect';
 
 const shopSelector = state => state.shop;
 
-const COLLECTION_ID_MAP = {
+const CATEGORY_ID_MAP = {
     womens: 1,
     localPickup: 2,
     housewares: 3,
@@ -14,8 +14,8 @@ export const getCollectionItems = createSelector(
     shop => shop.collections
 )
 
-export const selectCollection = collectionUrlParam =>
+export const getCategoryItems = categoryUrlParam =>
   createSelector(
     [getCollectionItems],
-    collections => collections.find(collection => collection.id === COLLECTION_ID_MAP[collectionUrlParam])
+    categories => categories.find(category => category.id === CATEGORY_ID_MAP[categoryUrlParam])
   );
