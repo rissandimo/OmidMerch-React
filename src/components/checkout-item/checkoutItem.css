@@ -1,3 +1,7 @@
+/* .stripe__checkout_button{
+    margin: 1rem 0 0 auto;
+} */
+
 .checkout__item {
     width: 100%;
     display: flex;
@@ -43,5 +47,11 @@
 
 .remove__button:active{
     transform: scale(0.95);
-}   
+}
+
+.test-warning{
+    color: red;
+    margin: 2rem auto;
+    text-align: center;
+}
   
