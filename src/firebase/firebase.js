@@ -1,4 +1,7 @@
 import firebase from 'firebase';
+import 'firebase/firestore';
+import 'firebase/auth';
+
 
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
@@ -12,6 +15,9 @@ const firebaseConfig = {
     measurementId: "G-M86445C861"
   };
 
+firebase.initializeApp(firebaseConfig);
+
+
   export const createUserProfileDocument = async (userAuth, additionalData) => {
 
     if(!userAuth) return;
@@ -24,11 +30,12 @@ const firebaseConfig = {
 
     // execute if user doesn't exists in firestore db
     if(!userSnapshotRef.exists){
-      const { email } = userAuth;
+      const { displayName, email } = userAuth;
       const dateCreated = new Date();
 
       try{
         await userDocRef.set({
+           displayName,
            email,
            dateCreated,
            ...additionalData
@@ -44,7 +51,12 @@ const firebaseConfig = {
 
   }
 
-firebase.initializeApp(firebaseConfig);
-
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
+
+// Google authentication
+const googleProvider = new firebase.auth.GoogleAuthProvider();
+googleProvider.setCustomParameters({prompt: 'select_account'});
+export const signInWithGoogle = () => auth.signInWithPopup(googleProvider);
+
+export default firebase;

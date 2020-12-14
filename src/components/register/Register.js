@@ -2,7 +2,7 @@ import React from 'react';
 import './register.css';
 
 // Firebase
-import { auth } from '../../firebase/firebase';
+import { auth, createUserProfileDocument } from '../../firebase/firebase';
 
 // Material UI
 import { Button, FormControl, TextField } from '@material-ui/core';
@@ -13,6 +13,7 @@ class Register extends React.Component{
         super();
 
         this.state = {
+            displayName: '',
             email: '',
             password: '',
             confirmPassword: ''
@@ -23,10 +24,10 @@ class Register extends React.Component{
         this.setState({ [event.target.name] : event.target.value})
     }
 
-    handleSubmit = event => {
+    handleSubmit = async event => {
         event.preventDefault();
 
-        const { email, password, confirmPassword } = this.state;
+        const { displayName, email, password, confirmPassword } = this.state;
         
         // confirm passwords match
         if(password !== confirmPassword){
@@ -34,25 +35,37 @@ class Register extends React.Component{
             return;
         }
 
-        // register user in firebase
-        auth.createUserWithEmailAndPassword(email, password)
-        .function((error) => {
-            console.log('Unable to create user: ', error);
-        })
+        try{
+            // register user in authentication table -- email/password
+            const { user } = auth.createUserWithEmailAndPassword(email, password)
+            .function((error) => {
+                console.log('Unable to create user: ', error);
+            });
 
-        // clear form
-        this.setState({
-            email: '',
-            password: '',
-            confirmPassword: ''  
-        })
+            // add user info to firestore
+            await createUserProfileDocument(user, { displayName });
+
+            // clear form
+            this.setState({
+                displayName: '',
+                email: '',
+                password: '',
+                confirmPassword: ''  
+            });
+        } catch(error){
+            console.log(error);
+        }
+
     }
     render(){
         
-        const { email, password, confirmPassword} = this.state;
+        const { displayName, email, password, confirmPassword} = this.state;
         return(
             <div className="register">
                 <form onSubmit={this.handleSubmit} className='register__form'>
+                    <FormControl>
+                        <TextField value={displayName} label='Full Name ' name='displayName' onChange={this.handleChange} />
+                    </FormControl>
                     <FormControl>
                         <TextField value={email} label='Email ' name='email' onChange={this.handleChange} />
                     </FormControl>

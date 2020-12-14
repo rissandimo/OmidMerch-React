@@ -2,7 +2,7 @@ import React from 'react';
 import './login.css';
 
 // Firebase
-import { auth } from '../../firebase/firebase';
+import { auth, signInWithGoogle } from '../../firebase/firebase';
 
 // Material UI
 import { Button, FormControl, TextField } from '@material-ui/core';
@@ -54,6 +54,7 @@ class Login extends React.Component{
                         <TextField value={this.state.password} label='Password' name='password' type='password' onChange={this.handleChange} />
                     </FormControl>
                     <Button color='primary' type='submit'>Login</Button>
+                    <button onClick={signInWithGoogle}>Sign In With Google</button>
                 </form>
 
                 <div className="login__createAccount">
