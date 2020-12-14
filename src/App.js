@@ -11,7 +11,6 @@ import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
 import Womens from './pages/womens/Womens';
 
-// Firebase
 import { auth, createUserProfileDocument } from './firebase/firebase';
 
 // Redux

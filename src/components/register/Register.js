@@ -1,7 +1,6 @@
 import React from 'react';
 import './register.css';
 
-// Firebase
 import { auth, createUserProfileDocument } from '../../firebase/firebase';
 
 // Material UI

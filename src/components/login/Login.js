@@ -1,7 +1,6 @@
 import React from 'react';
 import './login.css';
 
-// Firebase
 import { auth, signInWithGoogle } from '../../firebase/firebase';
 
 // Material UI
