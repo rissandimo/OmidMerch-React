@@ -3,9 +3,34 @@
     width: 80%;
 }
 
-.homePage > .homePage__items{
+.homePage__items{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    grid-gap: 1rem;
+}
+
+@media (max-width: 1625px){
+    .homePage__items{
+    grid-template-columns: repeat(3, 1fr);
+
+    }
+}
+
+@media (max-width: 1240px){
+    .homePage__items{
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 2rem;
+    }
+}
+
+@media (max-width: 880px){
+    .homePage__items{
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 5rem;
+    }
 }
 
 /* 
