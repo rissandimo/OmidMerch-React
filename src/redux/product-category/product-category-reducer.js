@@ -20,7 +20,7 @@ const INITIAL_STATE = {
         },
         {
         title: 'Jewelry',
-        imageUrl: 'https://i.ibb.co/M2KmCXQ/6.jpg',
+        imageUrl: 'https://i.ibb.co/txvbLkP/7.jpg',
         id: 4,
         linkUrl: '/shop/jewelry'
         }

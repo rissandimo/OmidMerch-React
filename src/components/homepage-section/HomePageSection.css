@@ -1,6 +1,7 @@
 .homePageSection{
-    height: 340px;
-    width: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .homePageSection:hover{
@@ -8,8 +9,8 @@
 }
 
 .homePageSection__pic{
-    height: 95%;
-    width: 100%;
+    height: 300px;
+    width: 300px;
 }
 
 .homePageSection__pic > .homePageSection__link > img{

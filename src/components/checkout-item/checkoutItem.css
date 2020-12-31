@@ -14,10 +14,9 @@
 }
 
 .checkout__item > .image__container {
-      height: 23%;
-      width: 23%;
+      height: 169px;
+      width: 255px;
       padding-right: 15px;
-
 }
 
 .image__container > img{

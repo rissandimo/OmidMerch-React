@@ -14,6 +14,7 @@ const HomePage = ({ sections }) => {
 
     return(
         <div className="homePage">
+            <h2 className="title">Shop By Category</h2>
             <div className="homePage__items">
                 {
                 sections.map(({ id, ...otherProps}) => ( <HomePageSection key={id} {...otherProps} /> ))

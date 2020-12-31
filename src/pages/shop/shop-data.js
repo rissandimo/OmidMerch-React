@@ -51,32 +51,38 @@ const SHOP_DATA = {
       items: [
         {
           id: 5,
-          title: 'Necklace',
+          name: 'Necklace',
           imageUrl: 'https://i.ibb.co/gJBGkHS/5.jpg',
           price: 15
         },
         {
           id: 6,
-          title: 'Necklace',
+          name: 'Necklace',
           imageUrl: 'https://i.ibb.co/M2KmCXQ/6.jpg',
           price: 15
         },
         {
           id: 7,
-          title: 'Necklace',
+          name: 'Necklace',
           imageUrl: 'https://i.ibb.co/s1wbwrm/7.jpg',
           price: 15
         },
         {
           id: 8,
-          title: 'Necklace',
+          name: 'Necklace',
           imageUrl: 'https://i.ibb.co/XCxCd63/8.jpg',
           price: 15
         },
         {
           id: 9,
-          title: 'Necklace',
+          name: 'Necklace',
           imageUrl: 'https://i.ibb.co/Kx2P69Q/9.jpg',
+          price: 15
+        },
+        {
+          id: 10,
+          name: 'Bracelet',
+          imageUrl: 'https://i.ibb.co/txvbLkP/7.jpg',
           price: 15
         }
       ]
