@@ -84,6 +84,48 @@ const SHOP_DATA = {
           name: 'Bracelet',
           imageUrl: 'https://i.ibb.co/txvbLkP/7.jpg',
           price: 15
+        },
+        {
+          id: 11,
+          name: 'Bracelet',
+          imageUrl: 'https://i.ibb.co/Nxs50Wr/11.jpg',
+          price: 15
+        },
+        {
+          id: 12,
+          name: 'Earrings',
+          imageUrl: 'https://i.ibb.co/p1TRFF9/12.jpg',
+          price: 15
+        },
+        {
+          id: 13,
+          name: 'Bracelet',
+          imageUrl: 'https://i.ibb.co/0qX4XsK/13.jpg',
+          price: 15
+        },
+        {
+          id: 14,
+          name: 'Pendant',
+          imageUrl: 'https://i.ibb.co/cXbTM5t/14.jpg',
+          price: 15
+        },
+        {
+          id: 15,
+          name: 'Pendant',
+          imageUrl: 'https://i.ibb.co/ZSj9v38/15.jpg',
+          price: 15
+        },
+        {
+          id: 16,
+          name: 'Jewelry',
+          imageUrl: 'https://i.ibb.co/jh9Jj4T/16.jpg',
+          price: 15
+        },
+        {
+          id: 17,
+          name: 'Jewelry',
+          imageUrl: 'https://i.ibb.co/tc5dK9F/17.jpg',
+          price: 15
         }
       ]
     }

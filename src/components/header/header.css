@@ -1,8 +1,8 @@
 .header{
     align-items: center;
-    background-color: lightgray;
+    background-color: white;
     justify-content: space-between;
-    height: 60px;
+    height: 70px;
     display: flex;
 }
 

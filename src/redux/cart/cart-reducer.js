@@ -18,7 +18,7 @@ const cartReducer = (state = INITIAL_STATE, action) => {
             return {
                 ...state,
                 // Keep all items who's id is not equal to the want we want to delete
-                cartItems: state.cartItems.filter(cartItemToDelete => cartItemToDelete.id != action.payload.id)
+                cartItems: state.cartItems.filter(cartItemToDelete => cartItemToDelete.id !== action.payload.id)
             }
         
         case CartActionTypes.TOGGLE_CART_HIDDEN:
