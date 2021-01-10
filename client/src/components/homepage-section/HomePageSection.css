@@ -1,0 +1,25 @@
+.homePageSection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.homePageSection:hover{
+    opacity: 0.7;
+}
+
+.homePageSection__pic{
+    height: 300px;
+    width: 300px;
+}
+
+.homePageSection__pic > .homePageSection__link > img{
+    height: 100%;
+    width: 100%;
+}
+
+.homePageSection__title{
+    margin-top: 5px;
+    text-align: center;
+    width: 100%;
+}
