@@ -32,7 +32,7 @@
 
 @media (max-width: 880px){
     .preview{
-        align-items: center;
+    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;

@@ -13,12 +13,11 @@ const CategoryPage = ({ category }) => {
 
     const { title, items } = category;
 
-    console.log(category);
     return(
         <div className="category__page">
-            <div className="hero">
+            {/* <div className="hero">
                 <img src={jewelryHero} alt=""/>
-            </div>
+            </div> */}
             <h2 className="title">{ title }</h2>
             <div className="items">
                 {items.map(item => (

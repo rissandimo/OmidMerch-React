@@ -10,7 +10,6 @@ import CollectionsOverview from '../../components/collections-overview/Collectio
 import CategoryPage from '../category/CategoryPage';
 
 const Shop = ({ match }) => {
-    console.log(match);
 return(
     <div className="shop">
         <Route exact path={`${match.path}`} component={CollectionsOverview} />
