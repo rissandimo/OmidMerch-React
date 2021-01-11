@@ -126,6 +126,12 @@ const SHOP_DATA = {
           name: 'Jewelry',
           imageUrl: 'https://i.ibb.co/tc5dK9F/17.jpg',
           price: 15
+        },
+        {
+          id: 17,
+          name: 'Test',
+          imageUrl: 'https://i.ibb.co/tc5dK9F/17.jpg',
+          price: 1
         }
       ]
     }
