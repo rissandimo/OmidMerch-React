@@ -15,12 +15,6 @@ const SHOP_DATA = {
           name: 'Fergamo Shoes: Size 6 1/2',
           imageUrl: 'https://i.ibb.co/GnW3m4z/3.jpg',
           price: 50.00
-        },
-        {
-          id: 3,
-          name: 'Test',
-          imageUrl: 'https://i.ibb.co/GnW3m4z/3.jpg',
-          price: 1.00
         }
       ]
     },
