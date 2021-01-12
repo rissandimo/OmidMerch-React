@@ -14,8 +14,11 @@
 }
 
 .cartIcon > .cartIcon__item-count{
-    bottom: 12px;
-    font-size: 10px;
+    border-radius: 50%;
+    top: -7px;
+    font-size: 0.8rem;
     font-weight: bold;
+    padding: 0.3rem;
     position: absolute;
+    right: -0.3rem;
 }
