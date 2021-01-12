@@ -6,7 +6,7 @@ const path = require('path');
 // If dev mode -> use stripe test key
 if(process.env.NODE_ENV !== 'production') require('dotenv').config();
 
-const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY_TEST);
+const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 
 
 const app = express();
