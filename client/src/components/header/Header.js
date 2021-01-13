@@ -35,10 +35,12 @@ const Header = ({ currentUser, cartHidden }) => (
     <div className="header__right">
 
     {/* User signed in - Show sign out link*/}
-    {
-        currentUser ? <div className='link' onClick={() => auth.signOut()}>Sign Out</div> : 
-        <Link to='/login'>Login</Link>
-    }
+    <div className="header__login">
+        {
+            currentUser ? <div onClick={() => auth.signOut()}>Sign Out</div> : 
+            <Link to='/login'>Login</Link>
+        }
+    </div>
 
     <div className="header__cart">
         <CartIcon />

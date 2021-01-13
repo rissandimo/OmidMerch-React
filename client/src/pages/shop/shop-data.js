@@ -6,12 +6,6 @@ const SHOP_DATA = {
       items: [
         {
           id: 1,
-          name: 'Burberry Glasses',
-          imageUrl: 'https://i.ibb.co/rf2PQQT/2.jpg',
-          price: 175
-        },
-        {
-          id: 2,
           name: 'Fergamo Shoes: Size 6 1/2',
           imageUrl: 'https://i.ibb.co/GnW3m4z/3.jpg',
           price: 50.00
@@ -40,7 +34,7 @@ const SHOP_DATA = {
           id: 4,
           name: 'China Plates',
           imageUrl: 'https://i.ibb.co/3f6XZR0/1.jpg',
-          price: 100
+          price: 20
         }
       ]
     },
@@ -126,12 +120,6 @@ const SHOP_DATA = {
           name: 'Jewelry',
           imageUrl: 'https://i.ibb.co/tc5dK9F/17.jpg',
           price: 15
-        },
-        {
-          id: 17,
-          name: 'Test',
-          imageUrl: 'https://i.ibb.co/tc5dK9F/17.jpg',
-          price: 1
         }
       ]
     }

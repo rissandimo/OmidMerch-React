@@ -30,4 +30,42 @@
     width: 200px;
 }
 
-@media(max-width: )
+@media(max-width: 375px){
+    .header{
+        border: 1px solid;
+        flex-direction: column;
+        height: 400px;
+        justify-content: center;
+    }
+    
+    .header__cart{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        width: 100%;
+    }
+
+    .header__links{
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: center;
+        height: 300px;
+    }
+
+    .header__login{
+        margin-top: 0.2rem;
+    }
+
+    .header__logo{
+        width: 100%;
+    }
+
+    .header__logo > .header__link > img{
+        width: 100%;
+    }
+
+    .header__right{
+        width: 100%;
+        flex-direction: column;
+    }
+}

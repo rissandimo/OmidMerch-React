@@ -23,18 +23,16 @@
     }
 }
 
-@media (max-width: 1345px){
+/* @media (max-width: 1345px){
     .preview{
     grid-template-columns: repeat(2, 1fr);
 
     }
-}
+} */
 
-@media (max-width: 880px){
+/* Ipad */
+@media (max-width: 768px){
     .preview{
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+        grid-template-columns: repeat(2, 1fr);
     }
 }
