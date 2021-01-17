@@ -32,7 +32,6 @@
 
 @media(max-width: 375px){
     .header{
-        border: 1px solid;
         flex-direction: column;
         height: 400px;
         justify-content: center;

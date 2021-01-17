@@ -7,14 +7,11 @@
 a,
 a:active{
   color: black;
+  cursor: pointer;
   text-decoration: none;
 }
 
 body{
   background-color: #EBF2FA;
   font-size: 1.2rem;
-}
-
-.link{
-  cursor: pointer;
 }

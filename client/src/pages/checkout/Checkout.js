@@ -30,7 +30,8 @@ const CheckoutPage = ({ cartItems, cartTotal }) => (
         {cartItems.map(cartItem => (<CheckoutItem key={cartItem.id} cartItem={cartItem} />))}
 
         <div className="total">Total: ${cartTotal}</div>
-        <StripeCheckoutButton price={cartTotal} className="stripe__button" />
+
+        {/* <StripeCheckoutButton price={cartTotal} className="stripe__button" /> */}
 
     </div>
 
