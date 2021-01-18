@@ -9,6 +9,15 @@
     text-align: center;
 }
 
+.productPreview > .title__pickups{
+    margin: 3rem 0;
+    text-align: center;
+}
+
+a.title__link{
+    color: blue;
+}
+
 .preview{
     display: grid;
     grid-template-columns: repeat(4, 1fr);

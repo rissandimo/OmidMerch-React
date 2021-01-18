@@ -5,8 +5,6 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 
-import { clearAllItemsFromCart } from '../../redux/cart/cart-actions';
-
 import { firestore } from '../../firebase/firebase';
 
 const StripeCheckoutButton = ({ price, cartItems, dispatch, user }) => {
@@ -17,7 +15,6 @@ const StripeCheckoutButton = ({ price, cartItems, dispatch, user }) => {
     const priceForStripe = price * 100;
 
     const onToken = token => {
-        console.log(token);
         axios({
             url: 'payment',
             method: 'post',
@@ -46,7 +43,9 @@ const StripeCheckoutButton = ({ price, cartItems, dispatch, user }) => {
 
         dispatch({
             type: 'CLEAR_CART'
-        })       
+        })    
+        
+        // Redirect user to confirmation page
     }
     
     return(

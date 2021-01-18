@@ -19,6 +19,10 @@ const CategoryPage = ({ category }) => {
                 <img src={jewelryHero} alt=""/>
             </div> */}
             <h2 className="title">{ title }</h2>
+            {title === 'Local Pickup' && 
+            <h2 className="title__pickups">
+                For local pickups, please call (323) 553-1462 or contact us via <a href={"mailto:omidmerch@gmail.com"} className="title__link">email</a>
+            </h2> }
             <div className="items">
                 {items.map(item => (
                     <PreviewItem key={item.id} item={item} title={title} />
