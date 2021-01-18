@@ -5,9 +5,11 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 
+import { clearAllItemsFromCart } from '../../redux/cart/cart-actions';
+
 import { firestore } from '../../firebase/firebase';
 
-const StripeCheckoutButton = ({ price, cartItems, user }) => {
+const StripeCheckoutButton = ({ price, cartItems, dispatch, user }) => {
     
     // const StripePublishableKey = 'pk_live_51HTuCLGlap3A7zAIhzAXSb0iF8H5Dfiiun5H4PiZaQFfRPI1DCmm36yA1lGdHfjWf7VmGOu2kg4j3F17Euy1HL8U00aDTAEYeg';
     const StripePublishableKey='pk_test_51HTuCLGlap3A7zAIyQX1bSHtbMDjIE7DuGETSigZyL4WlBsL8pRBFwqXd6yDmoPaiQNf9ftJPoRxEy6JQTxxTDSe00Kw0mqb8d';
@@ -24,8 +26,8 @@ const StripeCheckoutButton = ({ price, cartItems, user }) => {
                 token
             }
         }).then(response => {
-            alert('Payment Successful');
-            // console.log('user id', user.uid);
+            
+            // Save purchase to database
             firestore.collection('users')
             .doc(user?.id)
             .collection('orders')
@@ -37,12 +39,14 @@ const StripeCheckoutButton = ({ price, cartItems, user }) => {
             }).then(() => console.log('purchase saved to database'))
             .catch(error => console.log(error.message))
 
-
         }).catch(error => {
             console.log('Payment error: ', JSON.parse(error));
             alert('This were an issue with your payment. Please make sure you use the provided credit card');
         })
 
+        dispatch({
+            type: 'CLEAR_CART'
+        })       
     }
     
     return(
