@@ -15,10 +15,10 @@
 
 .cartIcon > .cartIcon__item-count{
     border-radius: 50%;
-    top: 0.1rem;
+    top: -0.5rem;
     font-size: 0.8rem;
     font-weight: bold;
     padding: 0.3rem;
     position: absolute;
-    right: 2.8rem;
+    left: 1.9rem;
 }
