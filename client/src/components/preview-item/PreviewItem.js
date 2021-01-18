@@ -6,7 +6,7 @@ import { connect } from 'react-redux';
 
 import CustomButton from '../button/CustomButton';
 
-const PreviewItem = ({ item, addCartItem }) => {
+const PreviewItem = ({ item, addCartItem, title }) => {
 
     const { name, imageUrl, price } = item;
     return (
@@ -17,7 +17,7 @@ const PreviewItem = ({ item, addCartItem }) => {
             </div>
             <div className="previewItem_description">
                 <h4>${price}</h4>
-                <CustomButton onClick={() => addCartItem(item)} className='previewItem__button' >ADD TO CART</CustomButton>
+                <CustomButton onClick={() => addCartItem(item)} className={`previewItem__button ${title === 'Local Pickup' ? 'localPickup': ''}`} >ADD TO CART</CustomButton>
             </div>
         </div>
     )

@@ -1,5 +1,4 @@
 .previewItem{
-    /* background-color: #3A7CA5; */
     border-radius: 10px;
     align-items: center;
     display: flex;
@@ -7,12 +6,10 @@
     justify-content: center;
     padding: 10px;
     position: relative;
-    /* height: 340px;
-    width: 350px; */
 
     -webkit-box-shadow: 4px 4px 12px -7px rgba(0,0,0,0.89);
--moz-box-shadow: 4px 4px 12px -7px rgba(0,0,0,0.89);
-box-shadow: 4px 4px 12px -7px rgba(0,0,0,0.89);
+    -moz-box-shadow: 4px 4px 12px -7px rgba(0,0,0,0.89);
+    box-shadow: 4px 4px 12px -7px rgba(0,0,0,0.89);
 }
 
 .previewItem > .image{
@@ -49,6 +46,10 @@ box-shadow: 4px 4px 12px -7px rgba(0,0,0,0.89);
     outline: 0;
     padding: 8px 10px;
 }
+.previewItem__button.localPickup{
+    display: none;
+}
+
 
 .previewItem__button:active{
     transform: scale(0.97);

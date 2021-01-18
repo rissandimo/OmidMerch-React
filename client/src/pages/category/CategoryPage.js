@@ -21,7 +21,7 @@ const CategoryPage = ({ category }) => {
             <h2 className="title">{ title }</h2>
             <div className="items">
                 {items.map(item => (
-                    <PreviewItem key={item.id} item={item} />
+                    <PreviewItem key={item.id} item={item} title={title} />
                 ))}
             </div>
         </div>

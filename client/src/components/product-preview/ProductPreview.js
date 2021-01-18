@@ -8,7 +8,7 @@ const ProductPreview = ({title, items}) => {
             <h2 className='productPreview__title'>{title}</h2>
             <div className="preview">
                 {items.map(item => (
-                    <PreviewItem key={item.id} item={item} alt="product"/>
+                    <PreviewItem key={item.id} item={item} title={title} alt="product"/>
                 ))}
             </div>
         </div>
