@@ -51,6 +51,7 @@ class App extends React.Component {
         })
     }else{
       setCurrentUser(userAuth);
+      console.log('app.js - userAuth: ', userAuth);
       console.log("User logged out");
     }
     });

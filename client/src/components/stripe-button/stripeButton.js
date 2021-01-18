@@ -3,9 +3,14 @@ import React from 'react';
 import StripeCheckout from 'react-stripe-checkout';
 import axios from 'axios';
 
-const StripeCheckoutButton = ({ price }) => {
+import { connect } from 'react-redux';
+
+import { firestore } from '../../firebase/firebase';
+
+const StripeCheckoutButton = ({ price, cartItems, user }) => {
     
-    const StripePublishableKey = 'pk_live_51HTuCLGlap3A7zAIhzAXSb0iF8H5Dfiiun5H4PiZaQFfRPI1DCmm36yA1lGdHfjWf7VmGOu2kg4j3F17Euy1HL8U00aDTAEYeg';
+    // const StripePublishableKey = 'pk_live_51HTuCLGlap3A7zAIhzAXSb0iF8H5Dfiiun5H4PiZaQFfRPI1DCmm36yA1lGdHfjWf7VmGOu2kg4j3F17Euy1HL8U00aDTAEYeg';
+    const StripePublishableKey='pk_test_51HTuCLGlap3A7zAIyQX1bSHtbMDjIE7DuGETSigZyL4WlBsL8pRBFwqXd6yDmoPaiQNf9ftJPoRxEy6JQTxxTDSe00Kw0mqb8d';
 
     const priceForStripe = price * 100;
 
@@ -20,10 +25,24 @@ const StripeCheckoutButton = ({ price }) => {
             }
         }).then(response => {
             alert('Payment Successful');
+            // console.log('user id', user.uid);
+            firestore.collection('users')
+            .doc(user?.id)
+            .collection('orders')
+            .doc(token.id)
+            .set({
+                cart: cartItems,
+                amount: price,
+                created: token.created
+            }).then(() => console.log('purchase saved to database'))
+            .catch(error => console.log(error.message))
+
+
         }).catch(error => {
             console.log('Payment error: ', JSON.parse(error));
             alert('This were an issue with your payment. Please make sure you use the provided credit card');
         })
+
     }
     
     return(
@@ -44,4 +63,8 @@ const StripeCheckoutButton = ({ price }) => {
     )
 }
 
-export default StripeCheckoutButton;
+const mapStateToProps = state => ({
+    user: state.user.currentUser
+})
+
+export default connect(mapStateToProps)(StripeCheckoutButton);
