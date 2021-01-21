@@ -7,7 +7,7 @@ import { Route } from 'react-router-dom';
 import CollectionsOverview from '../../components/collections-overview/CollectionsOverview';
 
 // Firebase
-import { firestore } from '../../firebase/firebase';
+import { firestore, convertCollectionsArraySnapshotToMap } from '../../firebase/firebase';
 
 // Pages
 import CategoryPage from '../category/CategoryPage';
@@ -18,8 +18,9 @@ class Shop extends React.Component {
     
     async componentDidMount(){
         const productsRef = firestore.collection('products');
-        const productsSnapshot = productsRef.onSnapshot(async snapshot => {
-            console.log('products snapshot', snapshot);
+         productsRef.onSnapshot(async snapshot => {
+           const productsMap = convertCollectionsArraySnapshotToMap(snapshot);
+           console.log('products map: ', productsMap);
         });
     }
     

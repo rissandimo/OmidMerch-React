@@ -71,6 +71,38 @@ const firebaseConfig = {
     await batch.commit();
   }
 
+  export const convertCollectionsArraySnapshotToMap = (products) => {
+
+    // convert array of array to array of objects
+    // 0 : {id, housewares, items}
+    // 1 : {id, womens, items}
+    const transformedCollection = products.docs.map(doc => {
+      const { title, items } = doc.data();
+
+      console.log('converted products map version:');
+      return {
+        routeName: encodeURI(title.toLowerCase()), // parses String to adhere to proper url format
+        id: doc.id,
+        title,
+        items
+      }
+    });
+
+    // convert array of objects to objects of objects
+    // {
+    //    {womens: {}}
+    //    {housewares: {}}
+    // }
+    // title(lowercase): respective collection
+    // womens: womens products
+    return transformedCollection.reduce((accumulator, product) => {
+      accumulator[product.title.toLowerCase()] = product;
+      return accumulator
+    }, {});
+
+    
+  }
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
