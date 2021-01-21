@@ -62,7 +62,7 @@ const firebaseConfig = {
     objectsToAdd.forEach(obj => {
 
       // Generate id for each category in collection
-      const newDocRef = collectionRef.doc();
+      const newDocRef = collectionRef.doc(obj.title);
       
       // Create Key/Value pairs = sd97sdf7d/Womens Object
       batch.set(newDocRef, obj)

@@ -51,7 +51,7 @@ class App extends React.Component {
         });
 
         setCurrentUser(userAuth);                                  // Destructure to not sent all category info
-        addCollectionAndDocumentsToFirestore('collections', collectionsArray.map(({title, items}) => ({title, items})))
+        addCollectionAndDocumentsToFirestore('products', collectionsArray.map(({title, items}) => ({title, items})))
     }
     else{
       // Update local state = no logged in user
