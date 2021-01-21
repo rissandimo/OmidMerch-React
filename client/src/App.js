@@ -16,11 +16,9 @@ import { auth, createUserProfileDocument } from './firebase/firebase';
 // Redux
 import { connect } from 'react-redux'
 import { setCurrentUser } from './redux/user/user-actions';
-import { getCategoryItemsForPreview } from './redux/shop/shop-selector';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
-
 
 class App extends React.Component {
 
