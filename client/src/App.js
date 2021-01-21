@@ -11,14 +11,16 @@ import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
 import Womens from './pages/womens/Womens';
 
-import { auth, createUserProfileDocument } from './firebase/firebase';
+import { addCollectionAndDocumentsToFirestore, auth, createUserProfileDocument } from './firebase/firebase';
 
 // Redux
 import { connect } from 'react-redux'
 import { setCurrentUser } from './redux/user/user-actions';
+import { getCategoryItemsForPreview } from './redux/shop/shop-selector';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 
 
 class App extends React.Component {
@@ -28,7 +30,7 @@ class App extends React.Component {
   
   componentDidMount(){
     
-    const { setCurrentUser } = this.props;
+    const { collectionsArray, setCurrentUser } = this.props;
     
     // When user logs in/out - save state in app
     this.logoutUser = auth.onAuthStateChanged(async userAuth => {
@@ -45,14 +47,15 @@ class App extends React.Component {
         setCurrentUser ({
             id: snapshot.id,
             ...snapshot.data()
-          })
-        }, () => {
-          console.log(this.state);
-        })
-    }else{
+          });
+        });
+
+        setCurrentUser(userAuth);                                  // Destructure to not sent all category info
+        addCollectionAndDocumentsToFirestore('collections', collectionsArray.map(({title, items}) => ({title, items})))
+    }
+    else{
+      // Update local state = no logged in user
       setCurrentUser(userAuth);
-      console.log('app.js - userAuth: ', userAuth);
-      console.log("User logged out");
     }
     });
   }
@@ -84,4 +87,8 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
-export default connect(null, mapDispatchToProps)(App);
+const mapStateToProps = createStructuredSelector({
+  collectionsArray: getCategoryItemsForPreview
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

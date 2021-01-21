@@ -53,6 +53,24 @@ const firebaseConfig = {
 
   }
 
+  export const addCollectionAndDocumentsToFirestore = async (collectionKey, objectsToAdd) => {
+    const collectionRef = firestore.collection(collectionKey);
+    
+    const batch = firestore.batch();
+
+    // Loop through category array (Womens, Localpickup etc...)
+    objectsToAdd.forEach(obj => {
+
+      // Generate id for each category in collection
+      const newDocRef = collectionRef.doc();
+      
+      // Create Key/Value pairs = sd97sdf7d/Womens Object
+      batch.set(newDocRef, obj)
+    });
+
+    await batch.commit();
+  }
+
 export const auth = firebase.auth();
 export const firestore = firebase.firestore();
 
