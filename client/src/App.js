@@ -11,7 +11,7 @@ import Register from './components/register/Register';
 import Shop from './pages/shop/Shop';
 import Womens from './pages/womens/Womens';
 
-import { addCollectionAndDocumentsToFirestore, auth, createUserProfileDocument } from './firebase/firebase';
+import { auth, createUserProfileDocument } from './firebase/firebase';
 
 // Redux
 import { connect } from 'react-redux'
@@ -20,7 +20,6 @@ import { getCategoryItemsForPreview } from './redux/shop/shop-selector';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
-import { createStructuredSelector } from 'reselect';
 
 
 class App extends React.Component {
@@ -30,7 +29,7 @@ class App extends React.Component {
   
   componentDidMount(){
     
-    const { collectionsArray, setCurrentUser } = this.props;
+    const { setCurrentUser } = this.props;
     
     // When user logs in/out - save state in app
     this.logoutUser = auth.onAuthStateChanged(async userAuth => {
@@ -50,8 +49,7 @@ class App extends React.Component {
           });
         });
 
-        setCurrentUser(userAuth);                                  // Destructure to not sent all category info
-        addCollectionAndDocumentsToFirestore('products', collectionsArray.map(({title, items}) => ({title, items})))
+        setCurrentUser(userAuth);                 
     }
     else{
       // Update local state = no logged in user
@@ -87,8 +85,4 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 })
 
-const mapStateToProps = createStructuredSelector({
-  collectionsArray: getCategoryItemsForPreview
-})
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(null, mapDispatchToProps)(App);
