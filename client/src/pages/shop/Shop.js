@@ -12,15 +12,21 @@ import { firestore, convertCollectionsArraySnapshotToMap } from '../../firebase/
 // Pages
 import CategoryPage from '../category/CategoryPage';
 
+// Redux
+import { connect } from 'react-redux';
+import { updateProducts } from '../../redux/shop/shop-actions';
+
 class Shop extends React.Component {
 
     unsubscribeFromSnapshot = null;
     
     async componentDidMount(){
+        const { updateProducts } = this.props;
+
         const productsRef = firestore.collection('products');
          productsRef.onSnapshot(async snapshot => {
            const productsMap = convertCollectionsArraySnapshotToMap(snapshot);
-           console.log('products map: ', productsMap);
+           updateProducts(productsMap);
         });
     }
     
@@ -37,4 +43,8 @@ class Shop extends React.Component {
     }
 }
 
-export default Shop;
+const mapDispatchToProps = dispatch => ({
+    updateProducts: productsMap => dispatch(updateProducts(productsMap))
+})
+
+export default connect(null, mapDispatchToProps)(Shop);
