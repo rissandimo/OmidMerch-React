@@ -99,8 +99,19 @@ const firebaseConfig = {
       accumulator[product.title.toLowerCase()] = product;
       return accumulator
     }, {});
+  }
 
-    
+  export const saveOrderToFirestore = (userAuth, token, purchaseDetails) => {
+    firestore.collection('users')
+            .doc(userAuth?.id)
+            .collection('orders')
+            .doc(token.id)
+            .set({
+              cartItems: purchaseDetails.cartItems,
+              price: purchaseDetails.price,
+              created: token.created
+            }).then(() => console.log('purchase saved to database'))
+            .catch(error => console.log(error.message))
   }
 
 export const auth = firebase.auth();

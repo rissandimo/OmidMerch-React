@@ -5,7 +5,7 @@ import axios from 'axios';
 
 import { connect } from 'react-redux';
 
-import { firestore } from '../../firebase/firebase';
+import { saveOrderToFirestore } from '../../firebase/firebase';
 
 const StripeCheckoutButton = ({ price, cartItems, dispatch, user }) => {
     
@@ -23,19 +23,15 @@ const StripeCheckoutButton = ({ price, cartItems, dispatch, user }) => {
                 token
             }
         }).then(response => {
-            
-            // Save purchase to database
-            firestore.collection('users')
-            .doc(user?.id)
-            .collection('orders')
-            .doc(token.id)
-            .set({
-                cart: cartItems,
-                amount: price,
-                created: token.created
-            }).then(() => console.log('purchase saved to database'))
-            .catch(error => console.log(error.message))
+            alert('Purchased placed');
 
+            const purchaseDetails = {
+                cartItems,
+                price
+            }
+            
+            saveOrderToFirestore(user, token, purchaseDetails);
+            
         }).catch(error => {
             console.log('Payment error: ', JSON.parse(error));
             alert('This were an issue with your payment. Please make sure you use the provided credit card');
