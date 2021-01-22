@@ -4,7 +4,7 @@ const shopSelector = state => state.shop;
 
 export const getCollectionItems = createSelector(
     [shopSelector],
-    shop => shop.collections
+    shop => shop.products
 )
 
 // Get array of category items
