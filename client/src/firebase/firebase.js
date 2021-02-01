@@ -53,33 +53,41 @@ const firebaseConfig = {
 
   }
 
+  /*
+  collectionKey = collection name
+  objectsToAdd = shop data
+  obj = Womens, Jewelry, etc...
+  */
   export const addCollectionAndDocumentsToFirestore = async (collectionKey, objectsToAdd) => {
+
+    // Create collection ref (collection name)
     const collectionRef = firestore.collection(collectionKey);
-    
+
+    console.log('collection ref', collectionRef);
+
     const batch = firestore.batch();
 
     // Loop through category array (Womens, Localpickup etc...)
     objectsToAdd.forEach(obj => {
 
       // Generate id for each category in collection
-      const newDocRef = collectionRef.doc(obj.title);
+      const newDocRef = collectionRef.doc();
       
-      // Create Key/Value pairs = sd97sdf7d/Womens Object
-      batch.set(newDocRef, obj)
+      // // Create Key/Value pairs = sd97sdf7d/Womens Object
+      batch.set(newDocRef, obj);
     });
 
-    await batch.commit();
+    return await batch.commit();
   }
 
-  export const convertCollectionsArraySnapshotToMap = (products) => {
+  export const convertCollectionsArraySnapshotToMap = (collections) => {
 
-    // convert array of array to array of objects
+    // convert array of array(firestore) to array of objects(transformedCollection)
     // 0 : {id, housewares, items}
     // 1 : {id, womens, items}
-    const transformedCollection = products.docs.map(doc => {
+    const transformedCollection = collections.docs.map(doc => {
       const { title, items } = doc.data();
 
-      console.log('converted products map version:');
       return {
         routeName: encodeURI(title.toLowerCase()), // parses String to adhere to proper url format
         id: doc.id,
@@ -87,18 +95,22 @@ const firebaseConfig = {
         items
       }
     });
+    // console.log('converted products map version:');
+    // console.log(transformedCollection);
 
-    // convert array of objects to objects of objects
+    // convert array of objects(transformedCollection) to objects of objects(after reduce)
     // {
     //    {womens: {}}
     //    {housewares: {}}
     // }
     // title(lowercase): respective collection
     // womens: womens products
-    return transformedCollection.reduce((accumulator, product) => {
-      accumulator[product.title.toLowerCase()] = product;
-      return accumulator
-    }, {});
+    // Start off with empty object. For every iteration - the object key = category name, and the value will be assigned the current collection
+   return transformedCollection.reduce((accumulator, collection) => { // 'return' return the result(object of objects)
+    //  replace id with title
+     accumulator[collection.title.toLowerCase()] = collection; // for every collection (womens, jewelry, etc..)
+     return accumulator; // go to next iteration
+   }, {}); // {} pass in initial object = empty
   }
 
   export const saveOrderToFirestore = (userAuth, token, purchaseDetails) => {

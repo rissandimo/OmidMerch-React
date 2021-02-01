@@ -19,6 +19,7 @@ import { setCurrentUser } from './redux/user/user-actions';
 
 // Routing
 import { Route, Switch } from 'react-router-dom';
+import { createStructuredSelector } from 'reselect';
 
 class App extends React.Component {
 
@@ -47,7 +48,7 @@ class App extends React.Component {
           });
         });
 
-        setCurrentUser(userAuth);                 
+        setCurrentUser(userAuth);                                    
     }
     else{
       // Update local state = no logged in user
@@ -77,7 +78,7 @@ class App extends React.Component {
           </div>
         );
       }
-}
+    }
 
 const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))

@@ -6,7 +6,6 @@ import { Route } from 'react-router-dom';
 // Components
 import CollectionsOverview from '../../components/collections-overview/CollectionsOverview';
 
-// Firebase
 import { firestore, convertCollectionsArraySnapshotToMap } from '../../firebase/firebase';
 
 // Pages
@@ -19,19 +18,19 @@ import { updateProducts } from '../../redux/shop/shop-actions';
 class Shop extends React.Component {
 
     unsubscribeFromSnapshot = null;
-    
-    async componentDidMount(){
-        const { updateProducts } = this.props;
 
-        const productsRef = firestore.collection('products');
-         productsRef.onSnapshot(async snapshot => {
-           const productsMap = convertCollectionsArraySnapshotToMap(snapshot);
-           updateProducts(productsMap);
-        });
+    componentDidMount(){
+        const { updateProducts } = this.props;
+        const collectionRef = firestore.collection('collections');
+
+       this.unsubscribeFromSnapshot = collectionRef.onSnapshot(async snapshot => {
+           const collectionsMap = convertCollectionsArraySnapshotToMap(snapshot);
+           updateProducts(collectionsMap);
+        //    console.log('shop page - collections map: ', collectionsMap);
+        })
     }
     
     render(){
-        
         const { match } = this.props;
 
         return(
@@ -44,7 +43,7 @@ class Shop extends React.Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    updateProducts: productsMap => dispatch(updateProducts(productsMap))
+    updateProducts: collectionsMap => dispatch(updateProducts(collectionsMap))
 })
 
 export default connect(null, mapDispatchToProps)(Shop);

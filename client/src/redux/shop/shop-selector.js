@@ -12,11 +12,11 @@ export const getCollectionItems = createSelector(
 // For each key, get the items that pertain to that key
 export const getCategoryItemsForPreview = createSelector(
   [getCollectionItems],
-  categories => Object.keys(categories).map(key => categories[key])
+  categories => categories ? Object.keys(categories).map(key => categories[key]) : []
 )
 
 export const getCategoryItems = categoryUrlParam =>
   createSelector(
     [getCollectionItems],
-    categories => categories[categoryUrlParam]
+    categories => categories ? categories[categoryUrlParam] : null
   );

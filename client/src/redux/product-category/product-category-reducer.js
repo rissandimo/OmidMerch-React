@@ -6,15 +6,15 @@ const INITIAL_STATE = {
         id: 1,
         linkUrl: '/shop/womens'
         },
-        {
-        title: 'Local Pickup',
-        imageUrl: 'https://i.ibb.co/ZByc3Cx/36.jpg',
-        id: 2,
-        linkUrl: '/shop/localPickup'
-        },
+        // {
+        // title: 'Local Pickup',
+        // imageUrl: 'https://i.ibb.co/ZByc3Cx/36.jpg',
+        // id: 2,
+        // linkUrl: '/shop/localPickup'
+        // },
         {
         title: 'Housewares',
-        imageUrl: 'https://i.ibb.co/3f6XZR0/1.jpg',
+        imageUrl: 'https://i.ibb.co/ZByc3Cx/36.jpg',
         id: 3,
         linkUrl: '/shop/housewares'
         },

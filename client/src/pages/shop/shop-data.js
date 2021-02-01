@@ -18,19 +18,19 @@ const SHOP_DATA = {
         }
       ]
     },
-   localPickup: {
-      id: 2,
-      title: 'Local Pickup',
-      routeName: 'localPickup',
-      items: [
-        {
-          id: 3,
-          name: 'Rug',
-          imageUrl: 'https://i.ibb.co/N6ZTd2v/36.jpg',
-          price: 125
-        }
-      ]
-    },
+  //  localPickup: {
+  //     id: 2,
+  //     title: 'local',
+  //     routeName: 'localPickup',
+  //     items: [
+  //       {
+  //         id: 3,
+  //         name: 'Rug',
+  //         imageUrl: 'https://i.ibb.co/N6ZTd2v/36.jpg',
+  //         price: 125
+  //       }
+  //     ]
+  //   },
   housewares:  {
       id: 3,
       title: 'Housewares',
@@ -39,7 +39,7 @@ const SHOP_DATA = {
         {
           id: 4,
           name: 'China Plates',
-          imageUrl: 'https://i.ibb.co/3f6XZR0/1.jpg',
+          imageUrl: 'https://i.ibb.co/gPMBc6W/1.jpg',
           price: 20
         }
       ]
@@ -125,6 +125,30 @@ const SHOP_DATA = {
           id: 17,
           name: 'Jewelry',
           imageUrl: 'https://i.ibb.co/tc5dK9F/17.jpg',
+          price: 15
+        },
+        {
+          id: 18,
+          name: 'Necklace',
+          imageUrl: 'https://i.ibb.co/yhBDsHr/18.jpg',
+          price: 15
+        },
+        {
+          id: 19,
+          name: 'Necklace',
+          imageUrl: 'https://i.ibb.co/R4xdLJD/19.jpg',
+          price: 15
+        },
+        {
+          id: 20,
+          name: 'Jewelry',
+          imageUrl: 'https://i.ibb.co/YRt8KqG/20.jpg',
+          price: 15
+        },
+        {
+          id: 21,
+          name: 'Necklace',
+          imageUrl: 'https://i.ibb.co/Fh6SnbG/21.jpg',
           price: 15
         }
       ]
